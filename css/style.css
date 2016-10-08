@@ -1,0 +1,272 @@
+/****************
+  GENERAL;
+  **************/
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+body, html {
+	height: 100%;
+	font-family: calibri;
+	overflow: hidden;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.circle-area, .controllers-area {
+	border: 3px solid;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.circle-area {
+	height: 60%;
+	position: relative;
+}
+
+.controllers-area {
+	height: 30%;
+	border-left: none;
+	border-right: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0px 0;
+	box-sizing: border-box;
+}
+
+.shortcuts {
+	display: none;
+}
+
+/****************
+  CONTROLLERS-AREA; 
+  **************/
+
+.buttons {
+	text-align: center;
+}
+
+.buttons li {
+	display: inline-block;
+	width: 20%;
+	margin: 2px;
+}
+
+button {
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	padding: 2px 0;
+	border: 1px solid;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.moving {
+	margin-top: 10px;
+}
+
+.resetD {
+	margin-top: 20px;
+}
+
+.reset { 
+	padding: 15px 0;
+}
+
+/****************
+  CIRCLE-AREA; 
+  **************/
+
+.circle {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	border-radius: 50%;
+	position: absolute;
+	left: 37%;
+	top: 37%;
+    transition: background .5s;
+}
+
+/******************
+  MEDIA_QUERRIES;
+  ******************/
+
+/******************
+  CIRCLE_POSITION;
+  ******************/
+
+  @media screen and (min-width: 500px) {
+  	.circle {
+  		left: 42%;
+  		top: 42%;
+  	}
+  }
+
+  @media screen and (min-width: 700px) {
+  	.circle {
+  		left: 44%;
+  		top: 44%;
+  	}
+  }
+
+/******************--> END OF CIRCLE-POSITION <--******************/
+
+  @media screen and (min-width: 800px) {
+
+  	body {
+  		flex-direction: row-reverse;
+  		justify-content: space-between;
+  	}
+
+  	.circle-area, .controllers-area {
+  		height: 100%;
+  		border: 3px solid;
+  		margin:0;
+  	}
+	  
+  	.circle-area {
+  		width: 69%;
+  		height: 99.5%;
+  	}
+
+  	.controllers-area {
+  		width: 29%;
+  		justify-content: center;
+  	}
+
+  	.buttons li {
+  		width:30%;
+  	}
+
+  	button {
+  		height:50px
+  	}
+
+  	.scale {
+  		margin-bottom: 40px;
+  	}
+  	
+  	.moving li:first-child, .moving li:last-child{
+  		display:block;
+  		margin: 30px auto;
+  	}
+
+  	.resetD {
+  		width: 90%;
+  		margin: 0 auto;
+  	}
+	
+	  /****************
+  	    SHORTCUTS; 
+	    **************/
+	  
+  	.shortcuts {
+  		display: block;
+		position: absolute;
+		left: 20px;
+		top:40px;
+		transition: transform .5s;
+		transform: translateX(-110%);
+		border: 1px solid black;
+		border-radius: 10px;
+		padding: 20px 10px;
+		background-color: white;
+	}
+
+	.shortcuts h5 {
+		border-bottom: 1px solid;
+		width: 60%;
+		font-size: 1em;
+	}
+
+	.shortcuts p {
+		margin: 1px 0 7px;
+		font-size: .95em;
+	}
+
+	.shortcuts::after {
+		content: 'Shortcuts';
+		position: absolute;
+		right: -110px;
+		top:5px;
+		height:30px;
+		width: 100px;
+		background-color: transparent;
+		cursor: pointer;
+		border-radius: 0;
+		border-bottom: 2px solid;
+		border-top: 2px solid;
+		font-size: 1.5em;
+	}
+  }
+
+
+/************************
+  ORIENTATION: LANDSCAPE;
+  ************************/
+
+
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+	
+	body {
+  		flex-direction: row-reverse;
+  		justify-content: space-between;
+  	}
+
+  	.circle-area, .controllers-area {
+  		height: 100%;
+  		border: 3px solid;
+  		margin:0;
+  	}
+
+  	.circle-area {
+  		width: 69%;
+  		height: 98.5%;
+  	}
+
+  	.controllers-area {
+  		width: 29%;
+  		justify-content: center;
+  	}
+
+  	.circle {
+  		left: 37%;
+  		top: 37%;
+  	}
+
+  	.buttons li {
+  		width:30%;
+  	}
+
+  	.moving li:first-child, .moving li:last-child{
+  		display:block;
+  		margin: 10px auto;
+  	}
+
+  	.resetD {
+  		width: 90%;
+  		margin: 0 auto;
+  	}
+
+  	.reset {
+  		padding: 2px 0;
+  	}
+} 
+
+/******************
+  PSEUDO_CLASSES;
+  ******************/
+
+   button:focus {
+  	outline: none;
+  }
