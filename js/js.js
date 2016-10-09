@@ -237,24 +237,11 @@ function popUp() {
 		shortcuts.style.transform = 'translateX(0px)';
 	}
 }
-
-
-// RESIZING USING JQUERY;
   
   // EVERY TIME THE WINDOW IS RESIZING IT REFRESHES ITSELF SO THAT THE POSITION OF THE CIRCLE IS GETTING UPDATED;
 
-var $window = $(window);
-
-  $window.on('scroll resize', reload);
-
-function reload() {
-	if($window.width() < 700) {
-		location.reload()
-		console.log('refresed on less then 700');
-	}else {
-		location.reload();
-		console.log('refresed on more then 700');
-	}
+function refresh() {
+     location.reload();
 }
 
 // EXECUTE;
@@ -274,6 +261,8 @@ right.addEventListener('click', movingColor);
 reset.addEventListener('click', resetPosition);
 
 shortcuts.addEventListener('click', popUp);
+
+window.addEventListener('resize', refresh);
 
 
 // KEYBOARDS EVENTS;
