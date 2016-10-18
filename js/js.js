@@ -147,7 +147,8 @@ function scaleUp() {
 		leftFromEdge = centerX - (circleWidth / 2);
 
 		if(topFromEdge <= 5) {
-			circle.style.backgroundColor = 'red';
+		    topFromEdge = 0;
+		    circle.style.backgroundColor = 'red';
 		    circleArea.style.border = '3px solid red';
 		}else if (topFromEdge <= 0) {
 			topFromEdge = 0;
